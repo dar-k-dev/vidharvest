@@ -2,16 +2,14 @@
 
 FROM node:18-alpine
 
-# Install system dependencies
+# Install system dependencies including yt-dlp
 RUN apk add --no-cache \
     ffmpeg \
     python3 \
     py3-pip \
     git \
-    curl
-
-# Install yt-dlp with system packages override
-RUN pip3 install yt-dlp --break-system-packages
+    curl \
+    yt-dlp
 
 # Set working directory
 WORKDIR /app
