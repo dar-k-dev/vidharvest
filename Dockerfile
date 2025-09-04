@@ -10,8 +10,8 @@ RUN apk add --no-cache \
     git \
     curl
 
-# Install yt-dlp
-RUN pip3 install yt-dlp
+# Install yt-dlp with system packages override
+RUN pip3 install yt-dlp --break-system-packages
 
 # Set working directory
 WORKDIR /app
